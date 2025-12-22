@@ -1,65 +1,326 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Squad Security | Security Guard Services in Karachi",
+    template: "%s | Squad Security",
+  },
+  description: "Squad Security is a professional security guard company in Karachi providing trained armed and unarmed security guards, CCTV surveillance, event security, and corporate protection services.",
+  keywords: [
+    "Security guard service in Karachi",
+    "Squad Security",
+    "Squad International Security",
+    "Security guards in Karachi",
+    "Armed security guards in Karachi",
+    "Unarmed security guards",
+    "Event security services",
+    "CCTV security services",
+    "Professional security guards Pakistan",
+  ],
+};
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      {/* 1. Hero Section */}
+      <section className="bg-white py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1E1E1E] mb-6">
+              Security Guard Services in Karachi
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-700 mb-8">
+              Security You Can Trust. Protection You Can Rely On.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="bg-[#1F3D2B] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#1a3225] transition-colors"
+              >
+                Get a Quote
+              </Link>
+              <Link
+                href="/services"
+                className="bg-white text-[#1F3D2B] border-2 border-[#1F3D2B] px-8 py-3 rounded-md font-semibold hover:bg-gray-50 transition-colors"
+              >
+                Our Services
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Why Choose Squad Security */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E] text-center mb-12">
+            Why Choose Squad Security?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
+                    CNIC & Police Verified Guards
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    All our guards undergo thorough background checks and police verification for your peace of mind.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
+                    Mental Health Screening
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Comprehensive mental health assessments ensure our guards are fit for duty and reliable.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
+                    Trained & Self-Motivated Staff
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Our guards receive extensive training and are selected for their dedication and professionalism.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
+                    Monitoring & Regular Checking
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Continuous monitoring and regular site checks ensure consistent quality and performance.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
+                    Competitive Rates
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Quality security services at competitive prices without compromising on standards.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
+                    Quality Equipment
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Our guards are equipped with professional-grade security equipment and uniforms.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg p-6 border border-gray-200 md:col-span-2 lg:col-span-1">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold">✓</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
+                    24/7 Operations
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Round-the-clock security services available whenever you need protection.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Services Preview */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E] text-center mb-12">
+            Our Security Services
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold text-[#1F3D2B] mb-3">
+                Security Officers
+              </h3>
+              <p className="text-gray-600">
+                Professional security officers trained to handle various security scenarios with expertise and professionalism.
+              </p>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold text-[#1F3D2B] mb-3">
+                Armed Guards
+              </h3>
+              <p className="text-gray-600">
+                Licensed armed security guards for high-risk environments requiring enhanced protection measures.
+              </p>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold text-[#1F3D2B] mb-3">
+                Unarmed Guards (Batons)
+              </h3>
+              <p className="text-gray-600">
+                Trained unarmed security personnel equipped with batons for effective security coverage.
+              </p>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold text-[#1F3D2B] mb-3">
+                Event Security
+              </h3>
+              <p className="text-gray-600">
+                Specialized security services for events, conferences, weddings, and special occasions.
+              </p>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold text-[#1F3D2B] mb-3">
+                CCTV Surveillance
+              </h3>
+              <p className="text-gray-600">
+                Professional monitoring and surveillance services to keep your premises under constant watch.
+              </p>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold text-[#1F3D2B] mb-3">
+                Lady Guards
+              </h3>
+              <p className="text-gray-600">
+                Professional female security guards for environments requiring gender-specific security personnel.
+              </p>
+            </div>
+          </div>
+          <div className="text-center mt-12">
+            <Link
+              href="/services"
+              className="inline-block bg-[#1F3D2B] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#1a3225] transition-colors"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              View All Services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Company Stats */}
+      <section className="bg-[#1F3D2B] text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">2000+</div>
+              <div className="text-gray-200 font-medium">Guards</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">6+</div>
+              <div className="text-gray-200 font-medium">Years Experience</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">Multiple</div>
+              <div className="text-gray-200 font-medium">Clients</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">24/7</div>
+              <div className="text-gray-200 font-medium">Operations</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Our Clients Preview */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E] text-center mb-4">
+            Our Clients
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Trusted by corporate, residential, and event clients across Karachi
           </p>
+          
+          {/* Client Logos Grid - Placeholders */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
+            {[...Array(12)].map((_, index) => (
+              <div
+                key={index}
+                className="bg-white border border-gray-200 rounded-lg p-6 flex items-center justify-center h-24 hover:shadow-md transition-shadow"
+              >
+                <div className="text-gray-400 text-sm font-medium">
+                  Client {index + 1}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="/clients"
+              className="inline-block bg-[#1F3D2B] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#1a3225] transition-colors"
+            >
+              View All Clients
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E] mb-4">
+            Ready to Secure Your Business?
+          </h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Contact us today for a consultation and discover how Squad Security can protect what matters most to you.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block bg-[#1F3D2B] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#1a3225] transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Get Started Today
+          </Link>
         </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }

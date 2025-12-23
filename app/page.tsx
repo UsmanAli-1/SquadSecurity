@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HeroCarousel from "@/components/HeroCarousel";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import ServicesSection from "@/components/services/ServicesSection";
 
 export const metadata: Metadata = {
   title: {
@@ -29,129 +31,10 @@ export default function Home() {
       <HeroCarousel />
 
       {/* 2. Why Choose Squad Security */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E] text-center mb-12">
-            Why Choose Squad Security?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">✓</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
-                    CNIC & Police Verified Guards
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    All our guards undergo thorough background checks and police verification for your peace of mind.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">✓</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
-                    Mental Health Screening
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Comprehensive mental health assessments ensure our guards are fit for duty and reliable.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">✓</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
-                    Trained & Self-Motivated Staff
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Our guards receive extensive training and are selected for their dedication and professionalism.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">✓</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
-                    Monitoring & Regular Checking
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Continuous monitoring and regular site checks ensure consistent quality and performance.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">✓</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
-                    Competitive Rates
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Quality security services at competitive prices without compromising on standards.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">✓</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
-                    Quality Equipment
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Our guards are equipped with professional-grade security equipment and uniforms.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 border border-gray-200 md:col-span-2 lg:col-span-1">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">✓</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
-                    24/7 Operations
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Round-the-clock security services available whenever you need protection.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WhyChooseUs />
 
       {/* 3. Services Preview */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E] text-center mb-12">
             Our Security Services
@@ -220,7 +103,12 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <ServicesSection
+        limit={6}
+        showCTA
+      />
 
       {/* 4. Company Stats */}
       <section className="bg-[#1F3D2B] text-white py-16">
@@ -255,7 +143,7 @@ export default function Home() {
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
             Trusted by corporate, residential, and event clients across Karachi
           </p>
-          
+
           {/* Client Logos Grid - Placeholders */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
             {[...Array(12)].map((_, index) => (

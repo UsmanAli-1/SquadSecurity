@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import HeroCarousel from "@/components/HeroCarousel";
 
 export const metadata: Metadata = {
   title: {
@@ -24,32 +25,8 @@ export default function Home() {
   return (
     <>
       {/* 1. Hero Section */}
-      <section className="bg-white py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1E1E1E] mb-6">
-              Security Guard Services in Karachi
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-8">
-              Security You Can Trust. Protection You Can Rely On.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="bg-[#1F3D2B] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#1a3225] transition-colors"
-              >
-                Get a Quote
-              </Link>
-              <Link
-                href="/services"
-                className="bg-white text-[#1F3D2B] border-2 border-[#1F3D2B] px-8 py-3 rounded-md font-semibold hover:bg-gray-50 transition-colors"
-              >
-                Our Services
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+
+      <HeroCarousel />
 
       {/* 2. Why Choose Squad Security */}
       <section className="bg-gray-50 py-20">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import HeroCarousel from "@/components/HeroCarousel";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import ServicesSection from "@/components/Services/ServicesSection";
@@ -66,58 +67,41 @@ export default function Home() {
       </section>
 
       {/* 5. Our Clients Preview */}
-      {/* <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E] text-center mb-4">
-            Our Clients
-          </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Trusted by corporate, residential, and event clients across Karachi
-          </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
-            {[...Array(12)].map((_, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-lg p-6 flex items-center justify-center h-24 hover:shadow-md transition-shadow"
-              >
-                <div className="text-gray-400 text-sm font-medium">
-                  Client {index + 1}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link
-              href="/clients"
-              className="inline-block bg-[#1F3D2B] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#1a3225] transition-colors"
-            >
-              View All Clients
-            </Link>
-          </div>
-        </div>
-      </section> */}
-
-      <ClientsSection/>
+      <ClientsSection />
 
       {/* CTA Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E] mb-4">
-            Ready to Secure Your Business?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Contact us today for a consultation and discover how Squad Security can protect what matters most to you.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-[#1F3D2B] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#1a3225] transition-colors"
-          >
-            Get Started Today
-          </Link>
-        </div>
-      </section>
+        <section className="relative py-20 bg-white overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/m444.jpg" // <-- landscape image
+              alt="Squad Security Background"
+              fill
+              className="object-cover"
+              priority={false}
+            />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/95" />
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Ready to Secure Your Business?
+            </h2>
+            <p className="text-xl text-gray-400/50 mb-8 max-w-2xl mx-auto">
+              Contact us today for a consultation and discover how Squad Security can protect what matters most to you.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block bg-white text-[#1F3D2B] px-8 py-3 rounded-md font-semibold hover:scale-105 transition-all duration-300"
+            >
+              Get Started Today
+            </Link>
+          </div>
+        </section>
+
     </>
   );
 }

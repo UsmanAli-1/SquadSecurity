@@ -11,7 +11,7 @@ type Props = {
 
 export default function ClientsSection({ showCTA = true }: Props) {
   return (
-    <section className="pt-20 pb-10 bg-white">
+    <section className="py-20 bg-white">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

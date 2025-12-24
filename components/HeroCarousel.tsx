@@ -25,7 +25,7 @@ const slides = [
     id: 3,
     heading: "Security Services",
     text: "Providing the best security services all over Karachi.",
-    image: "/images/cctv-surveillance-camera-7267551.jpg",
+    image: "/images/m-car.jpg",
   },
 ];
 

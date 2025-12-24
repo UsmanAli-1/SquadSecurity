@@ -13,19 +13,12 @@ import {
   } from "lucide-react";
   
   export const services = [
-    // {
-    //   title: "Security Guard",
-    //   description:
-    //     "Professional security officers trained to handle various security scenarios with expertise and professionalism.",
-    //   icon: Shield,
-    //   image: "/images/cover-multi.jpg",
-    // },
     {
       title: "Armed Guards",
       description:
         "Licensed armed security guards for high-risk environments requiring enhanced protection measures.",
       icon: ShieldAlert,
-      image: "/images/cover-multi.jpg",
+      image: "/images/guardimg.jpg",
     },
     {
       title: "Unarmed Guards",
@@ -62,12 +55,6 @@ import {
       icon: Video,
       image: "/images/cctv-surveillance-camera-7267551.jpg",
     },
-    {
-      title: "Security Consultancy",
-      description:
-        "Expert risk assessment and customized security planning services.",
-      icon: Briefcase,
-      image: "/images/services/consultancy.jpg",
-    },
+
   ];
   

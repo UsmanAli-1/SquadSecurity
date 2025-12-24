@@ -167,3 +167,25 @@ body {
 
 
 
+
+/* Clients auto scroll */
+.client-scroll-wrapper {
+  overflow: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.client-scroll-track {
+  display: flex;
+  width: max-content;
+  animation: client-scroll 22s linear infinite;
+}
+
+@keyframes client-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

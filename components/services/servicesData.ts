@@ -60,7 +60,7 @@ import {
       description:
         "Professional monitoring and surveillance services to keep your premises under constant watch.",
       icon: Video,
-      image: "/images/services/cctv.jpg",
+      image: "/images/cctv-surveillance-camera-7267551.jpg",
     },
     {
       title: "Security Consultancy",

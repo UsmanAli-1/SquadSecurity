@@ -80,13 +80,13 @@ export default function HeroCarousel() {
                   <div className="flex mt-15  flex-col sm:flex-row gap-4 justify-center">
                     <Link
                       href="/contact"
-                      className="bg-[#1F3D2B] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#1a3225] transition-colors shadow-lg"
+                      className="bg-[#1F3D2B] text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-[#1F3D2B] shadow-lg hover:scale-105 duration-300 transition-all"
                     >
-                      Get a Quote
+                      Contact Us
                     </Link>
                     <Link
                       href="/services"
-                      className="bg-white text-[#1F3D2B] border-2 border-white px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+                      className="bg-white text-[#1F3D2B]  border-white px-8 py-3 rounded-md font-semibold hover:bg-[#1F3D2B] hover:text-white shadow-lg hover:scale-105 duration-300 transition-all"
                     >
                       Our Services
                     </Link>

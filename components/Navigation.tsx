@@ -82,10 +82,10 @@ export default function Navigation() {
             </div>
 
             {/* Desktop CTA Button - Right */}
-            <div className="hidden lg:block">
+            <div className="hidden lg:block hover:scale-105 duration-300 transition-all">
               <a
                 href={`tel:${phoneNumber.replace(/\s/g, "")}`}
-                className="bg-[#1F3D2B] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1a3225] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1F3D2B] focus:ring-offset-2"
+                className="bg-[#1F3D2B]  text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1a3225] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1F3D2B] focus:ring-offset-2"
                 aria-label="Call now"
               >
                 Call Now

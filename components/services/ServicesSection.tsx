@@ -28,6 +28,8 @@ export default function ServicesSection({
                     <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E]">
                         {title}
                     </h2>
+                    <div className="w-16 h-[2px] bg-[#1F3D2B] mx-auto mt-4 mb-4" />
+
                     {description && (
                         <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
                             {description}
@@ -91,7 +93,7 @@ export default function ServicesSection({
                     <div className="text-center mt-12">
                         <Link
                             href="/services"
-                            className="inline-block bg-[#1F3D2B] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#1a3225] transition-colors"
+                            className="inline-block bg-[#1F3D2B] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#1a3225] hover:scale-105 duration-300 transition-all "
                         >
                             View All Services
                         </Link>

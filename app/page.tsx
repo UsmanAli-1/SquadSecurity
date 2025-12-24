@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import HeroCarousel from "@/components/HeroCarousel";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import ServicesSection from "@/components/services/ServicesSection";
+import ServicesSection from "@/components/Services/ServicesSection";
+import ClientsSection from "@/components/Clients/ClientsSection";
 
 export const metadata: Metadata = {
   title: {
@@ -34,76 +35,6 @@ export default function Home() {
       <WhyChooseUs />
 
       {/* 3. Services Preview */}
-      {/* <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E] text-center mb-12">
-            Our Security Services
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-[#1F3D2B] mb-3">
-                Security Officers
-              </h3>
-              <p className="text-gray-600">
-                Professional security officers trained to handle various security scenarios with expertise and professionalism.
-              </p>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-[#1F3D2B] mb-3">
-                Armed Guards
-              </h3>
-              <p className="text-gray-600">
-                Licensed armed security guards for high-risk environments requiring enhanced protection measures.
-              </p>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-[#1F3D2B] mb-3">
-                Unarmed Guards (Batons)
-              </h3>
-              <p className="text-gray-600">
-                Trained unarmed security personnel equipped with batons for effective security coverage.
-              </p>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-[#1F3D2B] mb-3">
-                Event Security
-              </h3>
-              <p className="text-gray-600">
-                Specialized security services for events, conferences, weddings, and special occasions.
-              </p>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-[#1F3D2B] mb-3">
-                CCTV Surveillance
-              </h3>
-              <p className="text-gray-600">
-                Professional monitoring and surveillance services to keep your premises under constant watch.
-              </p>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-[#1F3D2B] mb-3">
-                Lady Guards
-              </h3>
-              <p className="text-gray-600">
-                Professional female security guards for environments requiring gender-specific security personnel.
-              </p>
-            </div>
-          </div>
-          <div className="text-center mt-12">
-            <Link
-              href="/services"
-              className="inline-block bg-[#1F3D2B] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#1a3225] transition-colors"
-            >
-              View All Services
-            </Link>
-          </div>
-        </div>
-      </section> */}
 
       <ServicesSection
         limit={6}
@@ -135,7 +66,7 @@ export default function Home() {
       </section>
 
       {/* 5. Our Clients Preview */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E] text-center mb-4">
             Our Clients
@@ -144,7 +75,6 @@ export default function Home() {
             Trusted by corporate, residential, and event clients across Karachi
           </p>
 
-          {/* Client Logos Grid - Placeholders */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
             {[...Array(12)].map((_, index) => (
               <div
@@ -167,7 +97,9 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <ClientsSection/>
 
       {/* CTA Section */}
       <section className="bg-white py-16">

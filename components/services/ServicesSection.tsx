@@ -59,7 +59,7 @@ export default function ServicesSection({
                                 className="bg-white shadow-lg border border-gray-200 rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 group"
                             >
                                 {/* Image */}
-                                <div className="relative h-44 w-full">
+                                <div className="relative h-65 w-full ">
                                     <Image
                                         src={service.image}
                                         alt={service.title}

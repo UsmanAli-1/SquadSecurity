@@ -10,45 +10,47 @@ import {
     Calendar,
     Car,
     Briefcase,
+    Video,
+    Users,
 } from "lucide-react";
 
 /* ================= SERVICES DATA (SAME FILE) ================= */
 
 const advancedServices = [
     {
-        title: "Army Retired Guards",
-        description:
-            "Highly disciplined and experienced security personnel retired from the Pakistan Army, ideal for sensitive locations and high-value assets.",
-        image: "/images/services/army-retired.jpg",
-        icon: "award",
-    },
-    {
         title: "Rural Area Security Guards",
         description:
             "Reliable security guards deployed for rural and remote areas, ensuring protection of farms, factories, and isolated sites.",
-        image: "/images/protocol-guards.jpg",
+        image: "/images/protocol.jpg",
         icon: "map",
     },
     {
-        title: "Body Guards",
+        title: "Site & Construction Guards",
         description:
-            "Expert risk assessment and Body Guards services.",
-        image: "/images/IMG-20221207-WA0023.jpg",
+            "Dedicated guards for construction sites, warehouses, and industrial locations to prevent theft and unauthorized access.",
+        image: "/images/guardimg.jpg",
         icon: "shield",
-    },
-    {
-        title: "Gwadar Project Guards",
-        description:
-            "Specialized security services for Gwadar and CPEC-related projects, trained for high-security and long-term deployments.",
-        image: "/images/services/gwadar.jpg",
-        icon: "alert",
     },
     {
         title: "One-Day / Temporary Guards",
         description:
             "Short-term guard services for events, VIP visits, emergencies, or temporary security needs.",
-        image: "/images/IMG-20221207-WA0023.jpg",
+        image: "/images/guard-3.jpg",
         icon: "calendar",
+    },
+    {
+        title: "Gwadar Project Guards",
+        description:
+            "Specialized security services for Gwadar and CPEC-related projects, trained for high-security and long-term deployments.",
+        image: "/images/bg-1.jpg",
+        icon: "alert",
+    },
+    {
+        title: "Lady Guards",
+        description:
+            "Professional female security guards for environments requiring gender-specific security personnel.",
+        image: "/images/lady-guard.jpg",
+        icon: "Users",
     },
     {
         title: "Rental Cars with Guards",
@@ -58,11 +60,11 @@ const advancedServices = [
         icon: "car",
     },
     {
-        title: "Site & Construction Guards",
+        title: "CCTV Surveillance",
         description:
-            "Dedicated guards for construction sites, warehouses, and industrial locations to prevent theft and unauthorized access.",
-        image: "/images/services/site-guards.jpg",
-        icon: "shield",
+            "Professional monitoring and surveillance services to keep your premises under constant watch.",
+        image: "/images/cctv-surveillance-camera-7267551.jpg",
+        icon: "Video",
     },
     {
         title: "Security Consultancy",
@@ -84,7 +86,9 @@ const iconMap: Record<string, any> = {
     map: MapPin,
     calendar: Calendar,
     car: Car,
-    Briefcase:Briefcase,
+    Briefcase: Briefcase,
+    Video: Video,
+    Users:Users,
 };
 
 /* ================= COMPONENT ================= */
@@ -96,7 +100,7 @@ export default function AdvancedServicesSection() {
                 {/* Heading */}
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E]">
-                        Specialized & Advanced Security Services
+                        Our Other Security Services
                     </h2>
                     <div className="w-16 h-[2px] bg-[#1F3D2B] mx-auto mt-4 mb-4" />
                     <p className="text-gray-600 max-w-3xl mx-auto">
@@ -120,7 +124,7 @@ export default function AdvancedServicesSection() {
                                 className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
                             >
                                 {/* Image */}
-                                <div className="relative h-44 w-full">
+                                <div className="relative h-65 w-full">
                                     <Image
                                         src={service.image}
                                         alt={service.title}

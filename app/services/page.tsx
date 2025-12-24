@@ -46,7 +46,7 @@ export default function Services() {
 
       {/* ================= SERVICES (MAIN) ================= */}
       <ServicesSection
-        title="Our Core Security Services"
+        title="Specialized & Advanced  Security Services"
         description="Professional security solutions designed to protect businesses, residences, and events across Karachi."
       />
 

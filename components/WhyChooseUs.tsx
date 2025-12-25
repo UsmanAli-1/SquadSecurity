@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants, easeOut } from "framer-motion";
 import { useRef } from "react";
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 30,
@@ -15,7 +15,7 @@ const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.4,
-      ease: "easeOut",
+      ease: easeOut, // ✅ Use the imported easeOut constant
     },
   },
 };
@@ -51,7 +51,6 @@ function AnimatedCard({
           <h3 className="text-lg font-semibold text-[#1E1E1E] mb-2">
             {title}
           </h3>
-          
           <p className="text-gray-600 text-sm">{desc}</p>
         </div>
       </div>
@@ -65,7 +64,6 @@ export default function WhyChooseUs() {
       title: "CNIC & Police Verified Guards",
       desc: "All our guards undergo thorough background checks and police verification for your peace of mind.",
     },
-
     {
       title: "Trained & Self-Motivated Staff",
       desc: "Our guards receive extensive training and are selected for their dedication and professionalism.",
@@ -94,10 +92,7 @@ export default function WhyChooseUs() {
         <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E] text-center mb-12">
           Why Choose Squad Security?
           <div className="w-16 h-[2px] bg-[#1F3D2B] mx-auto mt-4 mb-4" />
-
         </h2>
-        
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card, index) => (
             <AnimatedCard

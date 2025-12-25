@@ -13,7 +13,7 @@ const slides = [
     id: 1,
     heading: "Welcome To SQUAD INTERNATIONAL SECURITY ",
     text: "Security You Can Trust. Protection You Can Rely On.",
-    image: "/images/policeman-3856909_1280.jpg",
+    image: "/images/multiple-police.jpg",
   },
   {
     id: 2,

@@ -90,7 +90,7 @@ export default function Clients() {
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-gray-50 pt-30 pb-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold text-[#1E1E1E] mb-4">
             Our Trusted Clients

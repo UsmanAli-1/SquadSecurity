@@ -70,15 +70,15 @@ export default function Contact() {
   };
 
   // Replace with actual contact information
-  const phoneNumber = "+92-XXX-XXXXXXX";
-  const emailAddress = "info@squadsecurity.com";
+  const phoneNumber = "+92-304-2775661";
+  const emailAddress = "mj162332@gmail.com";
   const officeAddress = "123 Main Street, Karachi, Pakistan";
-  const whatsappNumber = "+92XXXXXXXXXX"; // Replace with actual WhatsApp number
+  const whatsappNumber = "+923042775661"; // Replace with actual WhatsApp number
 
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-gray-50 pt-30 pb-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold text-[#1E1E1E] mb-4">
             Contact Us

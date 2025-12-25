@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Building2, Hammer, Calendar, Home } from "lucide-react";
+import Image from "next/image";
+import ClientsSection from "@/components/Clients/ClientsSection";
+
 
 export const metadata: Metadata = {
   title: "Our Clients | Squad Security",
@@ -90,17 +93,34 @@ export default function Clients() {
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="bg-gray-50 pt-30 pb-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#1E1E1E] mb-4">
+      <section className="relative pt-30 pb-10 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/cl.jpg" // use any landscape image
+            alt="Security Services Background"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 lg:bg-black/90 bg-black/80" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Our Trusted Clients
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl">
-            Trusted security clients in Karachi across various industries. We're proud to serve 
+          <p className="text-xl text-gray-300 max-w-3xl">
+            Trusted security clients in Karachi across various industries. We're proud to serve
             leading businesses, construction sites, event organizers, and residential communities.
           </p>
         </div>
       </section>
+
+
+      <ClientsSection 
+      />
 
       {/* Client Categories */}
       <section className="py-20">
@@ -117,7 +137,7 @@ export default function Clients() {
                     {category.category} Clients
                   </h2>
                 </div>
-                
+
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {category.clients.map((client, clientIndex) => (
                     <div
@@ -201,18 +221,33 @@ export default function Clients() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1F3D2B] text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">
+
+      <section className="relative py-20 bg-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/m44.jpg" // <-- landscape image
+            alt="Squad Security Background"
+            fill
+            className="object-cover"
+            priority={false}
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 lg:bg-black/90 bg-black/80 " />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Join Our Growing List of Trusted Clients
           </h2>
-          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-            Experience the Squad Security difference. Trusted security clients in Karachi 
+          <p className="text-xl text-gray-400/50 mb-8 max-w-2xl mx-auto">
+            Experience the Squad Security difference. Trusted security clients in Karachi
             rely on us for professional, reliable security solutions.
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-[#1F3D2B] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors"
+            className="inline-block bg-white text-[#1F3D2B] px-8 py-3 rounded-md font-semibold hover:scale-105 transition-all duration-300"
           >
             Get Started
           </Link>

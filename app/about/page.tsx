@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Shield, Users, Award, Target, CheckCircle2, Clock } from "lucide-react";
+import Image from "next/image";
+
 
 export const metadata: Metadata = {
   title: "About Us | Squad Security ",
@@ -20,13 +22,26 @@ export default function About() {
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="bg-gray-50 pt-30 pb-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#1E1E1E] mb-4">
+      <section className="relative pt-30 pb-10 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/m4444.jpg" // use any landscape image
+            alt="Security Services Background"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 lg:bg-black/90 bg-black/80" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             About Squad Security
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl">
-            Your trusted partner for professional security solutions in Karachi. 
+          <p className="text-xl text-gray-300 max-w-3xl">
+            Your trusted partner for professional security solutions in Karachi.
             Committed to safety, discipline, and professionalism.
           </p>
         </div>
@@ -41,20 +56,20 @@ export default function About() {
             </h2>
             <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
               <p>
-                Squad Security has been a leading provider of professional security guard services 
-                in Karachi for over <strong className="text-[#1F3D2B]">6 years</strong>. Founded with 
-                a commitment to excellence and reliability, we have grown to become one of the most 
+                Squad Security has been a leading provider of professional security guard services
+                in Karachi for over <strong className="text-[#1F3D2B]">6 years</strong>. Founded with
+                a commitment to excellence and reliability, we have grown to become one of the most
                 trusted security companies in the region.
               </p>
               <p>
-                With a team of over <strong className="text-[#1F3D2B]">2000 trained security guards</strong>, 
-                we serve a diverse range of clients including corporate businesses, construction sites, 
+                With a team of over <strong className="text-[#1F3D2B]">2000 trained security guards</strong>,
+                we serve a diverse range of clients including corporate businesses, construction sites,
                 private residences, and event organizers throughout Karachi and surrounding areas.
               </p>
               <p>
-                Our foundation is built on three core principles: <strong className="text-[#1F3D2B]">safety</strong>, 
-                <strong className="text-[#1F3D2B]"> discipline</strong>, and <strong className="text-[#1F3D2B]">professionalism</strong>. 
-                These values guide every aspect of our operations, from guard selection and training 
+                Our foundation is built on three core principles: <strong className="text-[#1F3D2B]">safety</strong>,
+                <strong className="text-[#1F3D2B]"> discipline</strong>, and <strong className="text-[#1F3D2B]">professionalism</strong>.
+                These values guide every aspect of our operations, from guard selection and training
                 to client service and ongoing support.
               </p>
             </div>
@@ -104,10 +119,10 @@ export default function About() {
                 <h2 className="text-2xl font-bold text-[#1E1E1E]">Our Mission</h2>
               </div>
               <p className="text-gray-700 text-lg leading-relaxed">
-                To provide security you can trust and protection you can rely on. We are committed 
-                to delivering professional security services that exceed expectations through our 
-                dedication to safety, discipline, and unwavering professionalism. Our mission is 
-                to ensure the safety and security of our clients' assets, personnel, and operations 
+                To provide security you can trust and protection you can rely on. We are committed
+                to delivering professional security services that exceed expectations through our
+                dedication to safety, discipline, and unwavering professionalism. Our mission is
+                to ensure the safety and security of our clients' assets, personnel, and operations
                 while maintaining the highest standards of service excellence.
               </p>
             </div>
@@ -121,10 +136,10 @@ export default function About() {
                 <h2 className="text-2xl font-bold text-[#1E1E1E]">Our Vision</h2>
               </div>
               <p className="text-gray-700 text-lg leading-relaxed">
-                To be the most trusted and respected security services provider in Karachi, 
-                recognized for our commitment to excellence, innovation, and client satisfaction. 
-                We envision a future where businesses and individuals feel secure knowing they 
-                have partnered with a company that prioritizes their safety above all else, 
+                To be the most trusted and respected security services provider in Karachi,
+                recognized for our commitment to excellence, innovation, and client satisfaction.
+                We envision a future where businesses and individuals feel secure knowing they
+                have partnered with a company that prioritizes their safety above all else,
                 backed by a team of disciplined and professional security personnel.
               </p>
             </div>
@@ -148,8 +163,8 @@ export default function About() {
                   Safety First
                 </h3>
                 <p className="text-gray-600">
-                  The safety and security of our clients is our top priority. We implement 
-                  rigorous safety protocols and ensure all guards are trained to handle 
+                  The safety and security of our clients is our top priority. We implement
+                  rigorous safety protocols and ensure all guards are trained to handle
                   emergencies effectively.
                 </p>
               </div>
@@ -161,7 +176,7 @@ export default function About() {
                   Discipline
                 </h3>
                 <p className="text-gray-600">
-                  We maintain strict discipline standards across all operations. Our guards 
+                  We maintain strict discipline standards across all operations. Our guards
                   follow established protocols and maintain professional conduct at all times.
                 </p>
               </div>
@@ -173,8 +188,8 @@ export default function About() {
                   Professionalism
                 </h3>
                 <p className="text-gray-600">
-                  Professionalism is at the core of everything we do. From initial contact 
-                  to ongoing service delivery, we maintain the highest standards of 
+                  Professionalism is at the core of everything we do. From initial contact
+                  to ongoing service delivery, we maintain the highest standards of
                   professional conduct.
                 </p>
               </div>
@@ -195,7 +210,7 @@ export default function About() {
                 Integrity
               </h3>
               <p className="text-gray-600 text-sm">
-                We operate with honesty and transparency in all our business dealings, 
+                We operate with honesty and transparency in all our business dealings,
                 building trust through ethical practices.
               </p>
             </div>
@@ -204,7 +219,7 @@ export default function About() {
                 Reliability
               </h3>
               <p className="text-gray-600 text-sm">
-                Our clients can count on us to be there when they need us, every time, 
+                Our clients can count on us to be there when they need us, every time,
                 with consistent and dependable service.
               </p>
             </div>
@@ -213,7 +228,7 @@ export default function About() {
                 Excellence
               </h3>
               <p className="text-gray-600 text-sm">
-                We continuously strive to exceed expectations and improve our services 
+                We continuously strive to exceed expectations and improve our services
                 through innovation and dedication.
               </p>
             </div>
@@ -222,7 +237,7 @@ export default function About() {
                 Trust
               </h3>
               <p className="text-gray-600 text-sm">
-                Trust is the foundation of our relationships. We earn and maintain trust 
+                Trust is the foundation of our relationships. We earn and maintain trust
                 through consistent, professional service delivery.
               </p>
             </div>
@@ -247,8 +262,8 @@ export default function About() {
                     Proven Track Record
                   </h3>
                   <p className="text-gray-600">
-                    With over 6 years of experience in the security industry, we have the 
-                    knowledge and expertise to handle any security challenge. Our track record 
+                    With over 6 years of experience in the security industry, we have the
+                    knowledge and expertise to handle any security challenge. Our track record
                     speaks to our commitment to excellence.
                   </p>
                 </div>
@@ -262,8 +277,8 @@ export default function About() {
                     Highly Trained Personnel
                   </h3>
                   <p className="text-gray-600">
-                    Our 2000+ guards undergo comprehensive training programs covering safety 
-                    protocols, emergency response, and professional conduct. We ensure every 
+                    Our 2000+ guards undergo comprehensive training programs covering safety
+                    protocols, emergency response, and professional conduct. We ensure every
                     guard meets our high standards before deployment.
                   </p>
                 </div>
@@ -277,8 +292,8 @@ export default function About() {
                     Commitment to Safety & Discipline
                   </h3>
                   <p className="text-gray-600">
-                    Safety, discipline, and professionalism are not just words to us—they are 
-                    the principles that guide every decision and action. We maintain strict 
+                    Safety, discipline, and professionalism are not just words to us—they are
+                    the principles that guide every decision and action. We maintain strict
                     standards to ensure reliable protection.
                   </p>
                 </div>
@@ -292,8 +307,8 @@ export default function About() {
                     Comprehensive Coverage
                   </h3>
                   <p className="text-gray-600">
-                    We serve clients throughout Karachi, providing flexible security solutions 
-                    that can be customized to your specific needs, whether corporate, residential, 
+                    We serve clients throughout Karachi, providing flexible security solutions
+                    that can be customized to your specific needs, whether corporate, residential,
                     or event-based.
                   </p>
                 </div>
@@ -304,18 +319,32 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1F3D2B] text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">
+      <section className="relative py-20 bg-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/m444.jpg" // <-- landscape image
+            alt="Squad Security Background"
+            fill
+            className="object-cover"
+            priority={false}
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 lg:bg-black/90 bg-black/80 " />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Partner With Squad Security
           </h2>
-          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-            Experience the difference that 6+ years of experience, 2000+ trained guards, 
+          <p className="text-xl text-gray-400/50 mb-8 max-w-2xl mx-auto">
+            Experience the difference that 6+ years of experience, 2000+ trained guards,
             and our commitment to safety, discipline, and professionalism can make for your security needs.
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-[#1F3D2B] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors"
+            className="inline-block bg-white text-[#1F3D2B] px-8 py-3 rounded-md font-semibold hover:scale-105 transition-all duration-300"
           >
             Get in Touch
           </Link>

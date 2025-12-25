@@ -8,8 +8,9 @@ import { clients } from "./clientsData";
 type Props = {
   showCTA?: boolean;
 };
+ 
+export default function ClientsSection({ showCTA = false }: Props) {
 
-export default function ClientsSection({ showCTA = true }: Props) {
   return (
     <section className="py-20 bg-white">
       <motion.div

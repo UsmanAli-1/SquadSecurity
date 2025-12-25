@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Phone, Mail, MapPin, MessageCircle, Clock, Shield } from "lucide-react";
+import Image from "next/image";
+
 
 export default function Contact() {
   const [contactFormData, setContactFormData] = useState({
@@ -78,13 +80,26 @@ export default function Contact() {
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="bg-gray-50 pt-30 pb-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#1E1E1E] mb-4">
+      <section className="relative pt-30 pb-10 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/m44.jpg" // use any landscape image
+            alt="Security Services Background"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 lg:bg-black/90 bg-black/80" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Contact Us
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl">
-            Get in touch with Squad Security to discuss your security needs, submit feedback, 
+          <p className="text-xl text-gray-300 max-w-3xl">
+            Get in touch with Squad Security to discuss your security needs, submit feedback,
             or file a complaint. We're here to help and committed to your satisfaction.
           </p>
         </div>
@@ -307,7 +322,7 @@ export default function Contact() {
                 </h2>
               </div>
               <p className="text-gray-600 text-sm mb-6">
-                Your feedback helps us improve. If you have a complaint, we take it seriously 
+                Your feedback helps us improve. If you have a complaint, we take it seriously
                 and will address it promptly.
               </p>
               <form onSubmit={handleFeedbackSubmit} className="space-y-6" aria-label="Feedback and complaint form">

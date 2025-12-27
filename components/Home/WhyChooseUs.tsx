@@ -89,10 +89,18 @@ export default function WhyChooseUs() {
   return (
     <section className="bg-gray-50 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E] text-center mb-12">
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 40 }}
+          transition={{
+            duration: 0.5,
+            ease: "easeOut",
+          }}
+          className="text-3xl md:text-4xl font-bold text-[#1E1E1E] text-center mb-12">
           Why Choose Squad Security?
           <div className="w-16 h-[2px] bg-[#1F3D2B] mx-auto mt-4 mb-4" />
-        </h2>
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card, index) => (
             <AnimatedCard

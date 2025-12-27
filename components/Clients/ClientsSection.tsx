@@ -8,7 +8,7 @@ import { clients } from "./clientsData";
 type Props = {
   showCTA?: boolean;
 };
- 
+
 export default function ClientsSection({ showCTA = false }: Props) {
 
   return (

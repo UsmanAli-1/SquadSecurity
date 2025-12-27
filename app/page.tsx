@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import HeroCarousel from "@/components/HeroCarousel";
-import WhyChooseUs from "@/components/WhyChooseUs";
+import HeroCarousel from "@/components/Home/HeroCarousel";
+import WhyChooseUs from "@/components/Home/WhyChooseUs";
 import ServicesSection from "@/components/Services/ServicesSection";
 import ClientsSection from "@/components/Clients/ClientsSection";
+import CtaSection from "@/components/CtaSection";
 
 export const metadata: Metadata = {
   title: {
@@ -73,36 +74,12 @@ export default function Home() {
       />
 
       {/* CTA Section */}
-      <section className="relative py-20 bg-white overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/m444.jpg" // <-- landscape image
-            alt="Squad Security Background"
-            fill
-            className="object-cover"
-            priority={false}
-          />
-          {/* Overlay */}
-          <div className="absolute inset-0 lg:bg-black/90 bg-black/80 " />
-        </div>
 
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Secure Your Business?
-          </h2>
-          <p className="text-xl text-gray-400/50 mb-8 max-w-2xl mx-auto">
-            Contact us today for a consultation and discover how Squad Security can protect what matters most to you.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-[#1F3D2B] px-8 py-3 rounded-md font-semibold hover:scale-105 transition-all duration-300"
-          >
-            Get Started Today
-          </Link>
-        </div>
-      </section>
+      <CtaSection
+        imageLink="/images/m444.jpg"
+        title="Ready to Secure Your Business?"
+        description="Contact us today for a consultation and discover how Squad Security can protect what matters most to you."
+      />
 
     </>
   );

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Shield, Users, Award, Target, CheckCircle2, Clock } from "lucide-react";
 import Image from "next/image";
+import CtaSection from "@/components/CtaSection";
+import Headers from "@/components/Headers";
 
 
 export const metadata: Metadata = {
@@ -22,41 +24,25 @@ export default function About() {
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="relative pt-30 pb-10 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/m4444.jpg" // use any landscape image
-            alt="Security Services Background"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 lg:bg-black/90 bg-black/80" />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            About Squad Security
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl">
-            Your trusted partner for professional security solutions in Karachi.
-            Committed to safety, discipline, and professionalism.
-          </p>
-        </div>
-      </section>
+      <Headers
+        imageLink="/images/m4444.jpg"
+        title="About Squad Security"
+        description="Your trusted partner for professional security solutions in Karachi.
+            Committed to safety, discipline, and professionalism."
+      />
 
       {/* Company Overview */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#1E1E1E] mb-6">
-              Company Overview
+          <div className="max-w-4xl mx-auto ">
+            <h2 className="lg:text-4xl text-3xl font-bold text-[#1E1E1E] flex justify-center mb-6">
+              "Squad International Security Agency"
             </h2>
-            <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
-              <p>
-                Squad Security has been a leading provider of professional security guard services
+            <div className="w-16 h-[2px] bg-[#1F3D2B] mx-auto mt-4 mb-4" />
+
+            <div className="space-y-6 text-gray-700 text-lg leading-relaxed ">
+              <p >
+                Squad International Security agency has been a leading provider of professional security guard services
                 in Karachi for over <strong className="text-[#1F3D2B]">6 years</strong>. Founded with
                 a commitment to excellence and reliability, we have grown to become one of the most
                 trusted security companies in the region.
@@ -117,6 +103,7 @@ export default function About() {
                   <Target className="w-6 h-6 text-white" />
                 </div>
                 <h2 className="text-2xl font-bold text-[#1E1E1E]">Our Mission</h2>
+
               </div>
               <p className="text-gray-700 text-lg leading-relaxed">
                 To provide security you can trust and protection you can rely on. We are committed
@@ -152,7 +139,10 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#1E1E1E] text-center mb-12">
             Our Commitment
+            <div className="w-16 h-[2px] bg-[#1F3D2B] mx-auto mt-4 mb-4" />
+
           </h2>
+
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
@@ -203,6 +193,8 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#1E1E1E] text-center mb-12">
             Our Core Values
+            <div className="w-16 h-[2px] bg-[#1F3D2B] mx-auto mt-4 mb-4" />
+
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white rounded-lg p-6 border border-gray-200">
@@ -250,6 +242,8 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#1E1E1E] text-center mb-12">
             Why Choose Squad Security?
+          <div className="w-16 h-[2px] bg-[#1F3D2B] mx-auto mt-4 mb-4" />
+
           </h2>
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
@@ -319,37 +313,12 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20 bg-white overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/m444.jpg" // <-- landscape image
-            alt="Squad Security Background"
-            fill
-            className="object-cover"
-            priority={false}
-          />
-          {/* Overlay */}
-          <div className="absolute inset-0 lg:bg-black/90 bg-black/80 " />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Partner With Squad Security
-          </h2>
-          <p className="text-xl text-gray-400/50 mb-8 max-w-2xl mx-auto">
-            Experience the difference that 6+ years of experience, 2000+ trained guards,
-            and our commitment to safety, discipline, and professionalism can make for your security needs.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-[#1F3D2B] px-8 py-3 rounded-md font-semibold hover:scale-105 transition-all duration-300"
-          >
-            Get in Touch
-          </Link>
-        </div>
-      </section>
+      <CtaSection
+        imageLink="/images/m444.jpg"
+        title="Partner With Squad Security"
+        description="Experience the difference that 6+ years of experience, 2000+ trained guards,
+            and our commitment to safety, discipline, and professionalism can make for your security needs."
+      />
     </div>
   );
 }

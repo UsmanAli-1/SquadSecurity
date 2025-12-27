@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     "Contact Squad Security",
     "Security guard services Karachi",
     "Security service in Karachi",
+    "Security service in Pakistan",
   ],
 };
 

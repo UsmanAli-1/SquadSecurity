@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Building2, Hammer, Calendar, Home } from "lucide-react";
 import Image from "next/image";
 import ClientsSection from "@/components/Clients/ClientsSection";
+import CtaSection from "@/components/CtaSection";
+import Headers from "@/components/Headers";
 
 
 export const metadata: Metadata = {
@@ -92,35 +94,17 @@ export default function Clients() {
 
   return (
     <div className="bg-white">
+
       {/* Header */}
-      <section className="relative pt-30 pb-10 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/cl.jpg" // use any landscape image
-            alt="Security Services Background"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 lg:bg-black/90 bg-black/80" />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our Trusted Clients
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl">
-            Trusted security clients in Karachi across various industries. We're proud to serve
-            leading businesses, construction sites, event organizers, and residential communities.
-          </p>
-        </div>
-      </section>
-
-
-      <ClientsSection 
+      <Headers
+        imageLink="/images/cl.jpg"
+        title="Our Trusted Clients"
+        description="Trusted security clients in Karachi across various industries. We're proud to serve
+            leading businesses, construction sites, event organizers, and residential communities."
       />
+
+      {/* clients section  */}
+      <ClientsSection />
 
       {/* Client Categories */}
       <section className="py-20">
@@ -198,6 +182,8 @@ export default function Clients() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#1E1E1E] text-center mb-12">
             What Our Clients Say
+          <div className="w-16 h-[2px] bg-[#1F3D2B] mx-auto mt-4 mb-4" />
+
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
@@ -221,38 +207,12 @@ export default function Clients() {
       </section>
 
       {/* CTA */}
-
-      <section className="relative py-20 bg-white overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/m44.jpg" // <-- landscape image
-            alt="Squad Security Background"
-            fill
-            className="object-cover"
-            priority={false}
-          />
-          {/* Overlay */}
-          <div className="absolute inset-0 lg:bg-black/90 bg-black/80 " />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Join Our Growing List of Trusted Clients
-          </h2>
-          <p className="text-xl text-gray-400/50 mb-8 max-w-2xl mx-auto">
-            Experience the Squad Security difference. Trusted security clients in Karachi
-            rely on us for professional, reliable security solutions.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-[#1F3D2B] px-8 py-3 rounded-md font-semibold hover:scale-105 transition-all duration-300"
-          >
-            Get Started
-          </Link>
-        </div>
-      </section>
+      <CtaSection
+        imageLink="/images/m44.jpg"
+        title="Join Our Growing List of Trusted Clients"
+        description="Experience the Squad Security difference. Trusted security clients in Karachi
+            rely on us for professional, reliable security solutions."
+      />
     </div>
   );
 }

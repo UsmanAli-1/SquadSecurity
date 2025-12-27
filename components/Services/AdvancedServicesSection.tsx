@@ -88,7 +88,7 @@ const iconMap: Record<string, any> = {
     car: Car,
     Briefcase: Briefcase,
     Video: Video,
-    Users:Users,
+    Users: Users,
 };
 
 /* ================= COMPONENT ================= */
@@ -98,7 +98,15 @@ export default function AdvancedServicesSection() {
         <section className="py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Heading */}
-                <div className="text-center mb-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 40 }}
+                    transition={{
+                        duration: 0.5,
+                        ease: "easeOut",
+                    }}
+                    className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E]">
                         Our Other Security Services
                     </h2>
@@ -107,7 +115,7 @@ export default function AdvancedServicesSection() {
                         Advanced protection solutions designed for high-risk environments,
                         infrastructure projects, and specialized security needs.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

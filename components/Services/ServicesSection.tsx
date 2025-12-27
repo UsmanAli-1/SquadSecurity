@@ -22,9 +22,19 @@ export default function ServicesSection({
 
     return (
         <section className="py-20 bg-white ">
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
                 {/* Heading */}
-                <div className="text-center mb-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 40 }}
+                    transition={{
+                        duration: 0.5,
+                        ease: "easeOut",
+                    }}
+                    className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#1E1E1E]">
                         {title}
                     </h2>
@@ -35,7 +45,7 @@ export default function ServicesSection({
                             {description}
                         </p>
                     )}
-                </div>
+                </motion.div>
 
                 {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">

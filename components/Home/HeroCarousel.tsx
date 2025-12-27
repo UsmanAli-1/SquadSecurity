@@ -7,6 +7,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
+import { motion } from "framer-motion";
+
 
 const slides = [
   {
@@ -70,14 +72,46 @@ export default function HeroCarousel() {
               {/* Content Overlay */}
               <div className="relative z-10 h-full top-8 flex items-center justify-center">
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
-                  <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 40 }}
+                  transition={{
+                    duration: 0.3,
+                    ease: "easeOut",
+                  }}
+                  className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
+                  <motion.h1
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 40 }}
+                    transition={{
+                      duration: 0.7,
+                      ease: "easeOut",
+                    }}
+                    className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
                     {slide.heading}
-                  </h1>
-                  <p className="text-lg md:text-xl text-gray-100 mb-6 max-w-3xl mx-auto drop-shadow-md">
+                  </motion.h1>
+                  <motion.p
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 40 }}
+                    transition={{
+                      duration: 0.9,
+                      ease: "easeOut",
+                    }}
+                    className="text-lg md:text-xl text-gray-100 mb-6 max-w-3xl mx-auto drop-shadow-md">
                     {slide.text}
-                  </p>
-                  <div className="flex mt-15  flex-col sm:flex-row gap-4 justify-center">
+                  </motion.p>
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 40 }}
+                    transition={{
+                      duration: 0.12,
+                      ease: "easeOut",
+                    }}
+                    className="flex mt-15  flex-col sm:flex-row gap-4 justify-center">
                     <Link
                       href="/contact"
                       className="bg-[#1F3D2B] text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-[#1F3D2B] shadow-lg hover:scale-105 duration-300 transition-all"
@@ -90,8 +124,8 @@ export default function HeroCarousel() {
                     >
                       Our Services
                     </Link>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               </div>
             </div>
           </SwiperSlide>
@@ -134,6 +168,6 @@ export default function HeroCarousel() {
           }
         }
       `}</style>
-    </section>
+    </section >
   );
 }

@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Phone, Mail, MapPin, MessageCircle, Clock, Shield } from "lucide-react";
+import Headers from "@/components/Headers";
 import Image from "next/image";
-
 
 export default function Contact() {
   const [contactFormData, setContactFormData] = useState({
@@ -71,48 +70,29 @@ export default function Contact() {
     });
   };
 
-  // Replace with actual contact information
   const phoneNumber = "+92-304-2775661";
   const emailAddress = "mj162332@gmail.com";
   const officeAddress = "123 Main Street, Karachi, Pakistan";
-  const whatsappNumber = "+923042775661"; // Replace with actual WhatsApp number
+  const whatsappNumber = "+923042775661";
 
   return (
     <div className="bg-white">
       {/* Header */}
-      <section className="relative pt-30 pb-10 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/m44.jpg" // use any landscape image
-            alt="Security Services Background"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 lg:bg-black/90 bg-black/80" />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Contact Us
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl">
-            Get in touch with Squad Security to discuss your security needs, submit feedback,
-            or file a complaint. We're here to help and committed to your satisfaction.
-          </p>
-        </div>
-      </section>
+      <Headers
+        imageLink="/images/m44.jpg"
+        title="Contact Us"
+        description="Get in touch with Squad Security to discuss your security needs, submit feedback,
+            or file a complaint. We're here to help and committed to your satisfaction."
+      />
 
       {/* Contact Information Cards */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 ">
             {/* Phone */}
             <a
               href={`tel:${phoneNumber.replace(/\s/g, "")}`}
-              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all flex items-start space-x-4 group"
+              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all flex items-start space-x-4 group hover:scale-105 duration-300 trasition"
               aria-label={`Call us at ${phoneNumber}`}
             >
               <div className="w-12 h-12 bg-[#1F3D2B] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#1a3225] transition-colors">
@@ -130,7 +110,7 @@ export default function Contact() {
             {/* Email */}
             <a
               href={`mailto:${emailAddress}`}
-              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all flex items-start space-x-4 group"
+              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all flex items-start space-x-4 group hover:scale-105 duration-300 trasition"
               aria-label={`Email us at ${emailAddress}`}
             >
               <div className="w-12 h-12 bg-[#1F3D2B] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#1a3225] transition-colors">
@@ -146,7 +126,7 @@ export default function Contact() {
             </a>
 
             {/* Address */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 flex items-start space-x-4">
+            <div className="bg-white border border-gray-200 rounded-lg p-6 flex items-start space-x-4 hover:scale-105 duration-300 trasition">
               <div className="w-12 h-12 bg-[#1F3D2B] rounded-lg flex items-center justify-center flex-shrink-0">
                 <MapPin className="w-6 h-6 text-white" />
               </div>
@@ -165,7 +145,7 @@ export default function Contact() {
               href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, "")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-3 bg-[#25D366] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#20BA5A] transition-colors shadow-md"
+              className="inline-flex items-center space-x-3 bg-[#25D366] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#20BA5A]  shadow-md hover:scale-105 duration-300 trasition"
               aria-label="Contact us on WhatsApp"
             >
               <MessageCircle className="w-5 h-5" />
@@ -463,36 +443,70 @@ export default function Contact() {
       {/* Trust Indicators */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gray-50 rounded-lg p-8 border border-gray-200">
-            <h2 className="text-2xl font-bold text-[#1E1E1E] text-center mb-8">
-              Why Trust Squad Security?
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Shield className="w-6 h-6 text-white" />
+          <div className="relative rounded-lg border border-gray-200 overflow-hidden">
+
+            {/* Background */}
+            <div className="absolute inset-0">
+              <Image
+                src="/images/slid.jpeg"
+                alt="Squad Security Background"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/90" />
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 p-8">
+              <h2 className="text-2xl font-bold text-white text-center mb-8">
+                Why Trust Squad Security?
+          <div className="w-16 h-[2px] bg-[#1F3D2B] mx-auto mt-4 mb-4" />
+
+              </h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-white mb-2">
+                    6+ Years Experience
+                  </h3>
+                  <p className="text-gray-300 text-sm">
+                    Proven track record in security services
+                  </p>
                 </div>
-                <h3 className="font-semibold text-[#1E1E1E] mb-2">6+ Years Experience</h3>
-                <p className="text-gray-600 text-sm">Proven track record in security services</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Clock className="w-6 h-6 text-white" />
+
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Clock className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-white mb-2">
+                    24/7 Support
+                  </h3>
+                  <p className="text-gray-300 text-sm">
+                    Always available when you need us
+                  </p>
                 </div>
-                <h3 className="font-semibold text-[#1E1E1E] mb-2">24/7 Support</h3>
-                <p className="text-gray-600 text-sm">Always available when you need us</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center mx-auto mb-3">
-                  <MessageCircle className="w-6 h-6 text-white" />
+
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center mx-auto mb-3">
+                    <MessageCircle className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-white mb-2">
+                    Quick Response
+                  </h3>
+                  <p className="text-gray-300 text-sm">
+                    We respond to all inquiries promptly
+                  </p>
                 </div>
-                <h3 className="font-semibold text-[#1E1E1E] mb-2">Quick Response</h3>
-                <p className="text-gray-600 text-sm">We respond to all inquiries promptly</p>
               </div>
             </div>
+
           </div>
         </div>
       </section>
+
 
       {/* Business Hours */}
       <section className="py-12 bg-gray-50">

@@ -25,7 +25,7 @@ export default function Navigation() {
   return (
     <div className="sticky top-[3px] z-50">
       <nav
-        className="absolute top-3 left-0 right-0 z-50 flex justify-center px-4"
+        className="absolute top-3 left-0 right-0 z-50 flex justify-center "
       >
         <div className="w-full max-w-[90%] lg:max-w-[80%] bg-white rounded-2xl shadow-md px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between lg:h-20 h-17">

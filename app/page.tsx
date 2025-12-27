@@ -4,6 +4,7 @@ import WhyChooseUs from "@/components/Home/WhyChooseUs";
 import ServicesSection from "@/components/Services/ServicesSection";
 import ClientsSection from "@/components/Clients/ClientsSection";
 import CtaSection from "@/components/CtaSection";
+import Faqs from "@/components/Home/Faqs";
 
 export const metadata: Metadata = {
   title: {
@@ -70,6 +71,9 @@ export default function Home() {
       <ClientsSection
         showCTA
       />
+
+      {/* FAQs */}
+      <Faqs />
 
       {/* CTA Section */}
 

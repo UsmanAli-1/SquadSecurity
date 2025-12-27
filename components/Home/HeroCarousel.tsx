@@ -104,13 +104,10 @@ export default function HeroCarousel() {
                     {slide.text}
                   </motion.p>
                   <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 40 }}
-                    transition={{
-                      duration: 0.12,
-                      ease: "easeOut",
-                    }}
+                            initial={{ scale: 0.5, opacity: 0 }}
+                            whileInView={{ scale: 1, opacity: 1 }}
+                            transition={{ duration: 0.9 }}
+
                     className="flex mt-15  flex-col sm:flex-row gap-4 justify-center">
                     <Link
                       href="/contact"

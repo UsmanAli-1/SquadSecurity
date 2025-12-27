@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
 import HeroCarousel from "@/components/Home/HeroCarousel";
 import WhyChooseUs from "@/components/Home/WhyChooseUs";
 import ServicesSection from "@/components/Services/ServicesSection";

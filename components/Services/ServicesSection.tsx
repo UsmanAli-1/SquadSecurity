@@ -27,11 +27,11 @@ export default function ServicesSection({
 
                 {/* Heading */}
                 <motion.div
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={{ opacity: 0, y: 120 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 40 }}
                     transition={{
-                        duration: 0.5,
+                        duration: 0.8,
                         ease: "easeOut",
                     }}
                     className="text-center mb-12">
@@ -59,7 +59,7 @@ export default function ServicesSection({
                                 whileInView={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: 40 }}
                                 transition={{
-                                    duration: 0.5,
+                                    duration: 0.7,
                                     ease: "easeOut",
                                 }}
                                 viewport={{

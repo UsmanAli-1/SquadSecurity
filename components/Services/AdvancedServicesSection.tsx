@@ -99,11 +99,11 @@ export default function AdvancedServicesSection() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Heading */}
                 <motion.div
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={{ opacity: 0, y: 120 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 40 }}
                     transition={{
-                        duration: 0.5,
+                        duration: 0.7,
                         ease: "easeOut",
                     }}
                     className="text-center mb-12">
@@ -125,9 +125,9 @@ export default function AdvancedServicesSection() {
                         return (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 40 }}
+                                initial={{ opacity: 0, y: 120 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, ease: "easeOut" }}
+                                transition={{ duration: 0.7, ease: "easeOut" }}
                                 viewport={{ once: false, amount: 0.25 }}
                                 className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
                             >

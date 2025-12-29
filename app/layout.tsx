@@ -5,6 +5,8 @@ import { Toaster } from "react-hot-toast";
 import Navigation from "@/components/Layout/Navigation";
 import Footer from "@/components/Layout/Footer";
 import TopInfoBar from "@/components/Layout/TopInfoBar";
+import WhatsAppFloating from "@/components/WhatsAppFloating";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -72,6 +74,7 @@ export default function RootLayout({
           />
         </main>
         <Footer />
+        <WhatsAppFloating />
       </body>
     </html>
   );

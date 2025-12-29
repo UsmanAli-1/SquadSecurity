@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Phone, MapPin, Shield, MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function TopInfoBar() {
   const [rotatingTextIndex, setRotatingTextIndex] = useState(0);
@@ -54,7 +55,7 @@ export default function TopInfoBar() {
               className="hidden sm:flex items-center gap-2 transition-colors hover:text-gray-300"
               aria-label="Chat with us on WhatsApp"
             >
-              <MessageCircle className="h-4 w-4" />
+              <FaWhatsapp className="h-4 w-4" />
               <span>Chat with Us</span>
             </a>
           </div>

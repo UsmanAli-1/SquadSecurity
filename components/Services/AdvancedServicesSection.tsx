@@ -125,7 +125,7 @@ export default function AdvancedServicesSection() {
                         return (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 120 }}
+                                initial={{ opacity: 0, y: 80 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.7, ease: "easeOut" }}
                                 viewport={{ once: false, amount: 0.25 }}

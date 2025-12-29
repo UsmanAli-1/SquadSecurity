@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 
 
 export const metadata: Metadata = {
+  icons: "/images/logo3.png",
   title: "About Us | Squad Security ",
   description: "Learn about Squad Security, a trusted security company in Karachi with 6+ years of experience and 2000+ trained guards. We provide professional security guard services committed to safety, discipline, and professionalism.",
   keywords: [

@@ -3,12 +3,14 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, MessageCircle, Clock, Shield } from "lucide-react";
 import Headers from "@/components/Headers";
-import Image from "next/image";
+import toast from "react-hot-toast";
+import ContactInfo from "@/components/Contact/ContactInfo";
+import TrustIndicators from "@/components/Contact/TrustIndicators";
+
 
 export default function Contact() {
   const [contactFormData, setContactFormData] = useState({
     name: "",
-    email: "",
     phone: "",
     service: "",
     message: "",
@@ -16,41 +18,59 @@ export default function Contact() {
 
   const [feedbackFormData, setFeedbackFormData] = useState({
     name: "",
-    email: "",
     phone: "",
     type: "feedback",
-    subject: "",
     message: "",
   });
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Contact form submitted:", contactFormData);
-    alert("Thank you for your inquiry. We will contact you soon!");
-    setContactFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: "",
+
+    const res = await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ...contactFormData,
+        type: "contact",
+      }),
     });
+
+    if (res.ok) {
+      toast.success("Thank you! Your message has been sent.");
+      setContactFormData({
+        name: "",
+        phone: "",
+        service: "",
+        message: "",
+      });
+    } else {
+      toast.error("Something went wrong. Please try again.");
+    }
   };
 
-  const handleFeedbackSubmit = (e: React.FormEvent) => {
+
+  const handleFeedbackSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Feedback form submitted:", feedbackFormData);
-    alert("Thank you for your feedback. We appreciate your input and will address your concern promptly.");
-    setFeedbackFormData({
-      name: "",
-      email: "",
-      phone: "",
-      type: "feedback",
-      subject: "",
-      message: "",
+
+    const res = await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(feedbackFormData),
     });
+
+    if (res.ok) {
+      toast.success("Thank you for your feedback!");
+      setFeedbackFormData({
+        name: "",
+        phone: "",
+        type: "feedback",
+        message: "",
+      });
+    } else {
+      toast.error("Something went wrong. Please try again.");
+    }
   };
+
 
   const handleContactChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -70,10 +90,7 @@ export default function Contact() {
     });
   };
 
-  const phoneNumber = "+92-304-2775661";
-  const emailAddress = "mj162332@gmail.com";
-  const officeAddress = "123 Main Street, Karachi, Pakistan";
-  const whatsappNumber = "+923042775661";
+
 
   return (
     <div className="bg-white">
@@ -85,82 +102,16 @@ export default function Contact() {
             or file a complaint. We're here to help and committed to your satisfaction."
       />
 
-      {/* Contact Information Cards */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 ">
-            {/* Phone */}
-            <a
-              href={`tel:${phoneNumber.replace(/\s/g, "")}`}
-              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all flex items-start space-x-4 group hover:scale-105 duration-300 trasition"
-              aria-label={`Call us at ${phoneNumber}`}
-            >
-              <div className="w-12 h-12 bg-[#1F3D2B] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#1a3225] transition-colors">
-                <Phone className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-[#1E1E1E] mb-1">
-                  Phone
-                </h3>
-                <p className="text-gray-600 text-sm">{phoneNumber}</p>
-                <p className="text-gray-500 text-xs mt-1">Click to call</p>
-              </div>
-            </a>
 
-            {/* Email */}
-            <a
-              href={`mailto:${emailAddress}`}
-              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all flex items-start space-x-4 group hover:scale-105 duration-300 trasition"
-              aria-label={`Email us at ${emailAddress}`}
-            >
-              <div className="w-12 h-12 bg-[#1F3D2B] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#1a3225] transition-colors">
-                <Mail className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-[#1E1E1E] mb-1">
-                  Email
-                </h3>
-                <p className="text-gray-600 text-sm break-all">{emailAddress}</p>
-                <p className="text-gray-500 text-xs mt-1">Click to email</p>
-              </div>
-            </a>
-
-            {/* Address */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 flex items-start space-x-4 hover:scale-105 duration-300 trasition">
-              <div className="w-12 h-12 bg-[#1F3D2B] rounded-lg flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-[#1E1E1E] mb-1">
-                  Office Address
-                </h3>
-                <p className="text-gray-600 text-sm">{officeAddress}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* WhatsApp Button */}
-          <div className="text-center mb-12">
-            <a
-              href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, "")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-3 bg-[#25D366] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#20BA5A]  shadow-md hover:scale-105 duration-300 trasition"
-              aria-label="Contact us on WhatsApp"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>Contact Us on WhatsApp</span>
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* contact info section  */}
+      <ContactInfo />
 
       {/* Contact Form & Feedback Form */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-white rounded-lg p-8 border border-gray-200">
+            <div className="bg-white rounded-lg p-8 border border-gray-200 hover:scale-105 duration-300 trasition">
               <div className="flex items-center mb-6">
                 <div className="w-10 h-10 bg-[#1F3D2B] rounded-lg flex items-center justify-center mr-3">
                   <MessageCircle className="w-5 h-5 text-white" />
@@ -189,26 +140,6 @@ export default function Contact() {
                     aria-describedby="contact-name-description"
                   />
                   <p id="contact-name-description" className="sr-only">Enter your full name</p>
-                </div>
-                <div>
-                  <label
-                    htmlFor="contact-email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Email Address <span className="text-red-500" aria-label="required">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="contact-email"
-                    name="email"
-                    required
-                    value={contactFormData.email}
-                    onChange={handleContactChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#1F3D2B] focus:border-transparent outline-none"
-                    aria-required="true"
-                    aria-describedby="contact-email-description"
-                  />
-                  <p id="contact-email-description" className="sr-only">Enter your email address</p>
                 </div>
                 <div>
                   <label
@@ -292,7 +223,7 @@ export default function Contact() {
             </div>
 
             {/* Feedback/Complaint Form */}
-            <div className="bg-white rounded-lg p-8 border border-gray-200">
+            <div className="bg-white rounded-lg p-8 border border-gray-200 hover:scale-105 duration-300 trasition">
               <div className="flex items-center mb-6">
                 <div className="w-10 h-10 bg-[#1F3D2B] rounded-lg flex items-center justify-center mr-3">
                   <Shield className="w-5 h-5 text-white" />
@@ -351,26 +282,6 @@ export default function Contact() {
                 </div>
                 <div>
                   <label
-                    htmlFor="feedback-email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Email Address <span className="text-red-500" aria-label="required">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="feedback-email"
-                    name="email"
-                    required
-                    value={feedbackFormData.email}
-                    onChange={handleFeedbackChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#1F3D2B] focus:border-transparent outline-none"
-                    aria-required="true"
-                    aria-describedby="feedback-email-description"
-                  />
-                  <p id="feedback-email-description" className="sr-only">Enter your email address</p>
-                </div>
-                <div>
-                  <label
                     htmlFor="feedback-phone"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
@@ -386,26 +297,6 @@ export default function Contact() {
                     aria-describedby="feedback-phone-description"
                   />
                   <p id="feedback-phone-description" className="sr-only">Enter your phone number (optional)</p>
-                </div>
-                <div>
-                  <label
-                    htmlFor="feedback-subject"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Subject <span className="text-red-500" aria-label="required">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="feedback-subject"
-                    name="subject"
-                    required
-                    value={feedbackFormData.subject}
-                    onChange={handleFeedbackChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#1F3D2B] focus:border-transparent outline-none"
-                    aria-required="true"
-                    aria-describedby="feedback-subject-description"
-                  />
-                  <p id="feedback-subject-description" className="sr-only">Enter the subject of your feedback or complaint</p>
                 </div>
                 <div>
                   <label
@@ -441,103 +332,10 @@ export default function Contact() {
       </section>
 
       {/* Trust Indicators */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-lg border border-gray-200 overflow-hidden">
 
-            {/* Background */}
-            <div className="absolute inset-0">
-              <Image
-                src="/images/slid.jpeg"
-                alt="Squad Security Background"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-black/90" />
-            </div>
-
-            {/* Content */}
-            <div className="relative z-10 p-8">
-              <h2 className="text-2xl font-bold text-white text-center mb-8">
-                Why Trust Squad Security?
-          <div className="w-16 h-[2px] bg-[#1F3D2B] mx-auto mt-4 mb-4" />
-
-              </h2>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Shield className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-white mb-2">
-                    6+ Years Experience
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    Proven track record in security services
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Clock className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-white mb-2">
-                    24/7 Support
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    Always available when you need us
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-[#1F3D2B] rounded-full flex items-center justify-center mx-auto mb-3">
-                    <MessageCircle className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-white mb-2">
-                    Quick Response
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    We respond to all inquiries promptly
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <TrustIndicators />
 
 
-      {/* Business Hours */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg p-8 border border-gray-200 max-w-2xl mx-auto">
-            <div className="flex items-center justify-center mb-6">
-              <Clock className="w-8 h-8 text-[#1F3D2B] mr-3" />
-              <h2 className="text-2xl font-bold text-[#1E1E1E]">
-                Business Hours
-              </h2>
-            </div>
-            <div className="space-y-3 text-center">
-              <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                <span className="font-medium text-gray-700">Monday - Friday</span>
-                <span className="text-gray-600">9:00 AM - 6:00 PM</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                <span className="font-medium text-gray-700">Saturday</span>
-                <span className="text-gray-600">9:00 AM - 2:00 PM</span>
-              </div>
-              <div className="flex justify-between items-center py-2">
-                <span className="font-medium text-gray-700">Sunday</span>
-                <span className="text-gray-600">Closed</span>
-              </div>
-              <p className="text-sm text-gray-600 mt-4 pt-4 border-t border-gray-200">
-                Emergency security services available 24/7
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
